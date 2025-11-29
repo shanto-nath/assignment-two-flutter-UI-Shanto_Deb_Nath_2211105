@@ -8,6 +8,9 @@ const String studentEmail = "gemini.ai@google.com";
 const String studentBio = "I'm currently focused on enhancing large language models to provide world-class assistance. I believe clear, structured, and compliant code is the key to excellent digital tools. My current passion project is exploring generative UI design.";
 
 // --- Color Palette ---
+// --- Color Palette ---
+// --- Color Palette ---
+
 const Color primaryColor = Color(0xFF673AB7); // Deep Purple
 const Color secondaryColor = Color(0xFF9C27B0); // Lighter Purple
 const Color accentColor = Color(0xFF42A5F5); // Blue for indicators
@@ -491,7 +494,7 @@ class ReportsPage extends StatelessWidget {
               Text(category, style: const TextStyle(fontWeight: FontWeight.w500)),
               // FIX: Removed unnecessary braces from string interpolation
               Text(
-                '\$${amount.toStringAsFixed(2)} (${percent}%)',
+                '\$${amount.toStringAsFixed(2)} ($percent%)',
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ],
@@ -657,4 +660,3 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
-// The app now implements Home (Page 1), Reports (Page 2), and Profile (Page 3) pages.
