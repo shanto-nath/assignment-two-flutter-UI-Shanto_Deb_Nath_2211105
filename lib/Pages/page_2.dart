@@ -32,7 +32,7 @@ class Page2 extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 14, color: Colors.black54)),
                           Text(
-                            "Ohi Yea Siam",
+                            "Shanto Deb Nath",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),

@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                 category: "Shopping",
                 date: "Yesterday",
                 amount: -55.80,
-                iconData: Icons.shopping_cart_outlined, // New Icon
+                iconData: Icons.add_shopping_cart_rounded, // New Icon
               ),
               
               // Added an item to match the reference image count/style
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                 category: "Shopping",
                 date: "2 days ago",
                 amount: -120.45,
-                iconData: Icons.shopping_cart_outlined,
+                iconData: Icons.shopping_cart,
               ),
             ],
           ),
@@ -86,14 +86,14 @@ class HomePage extends StatelessWidget {
         const CircleAvatar(
           radius: 24,
           backgroundColor: Color(0xff7f00ff), // Vibrant purple
-          child: Text("S", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          child: Text("SDN", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         ),
         const SizedBox(width: 12),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text("Welcome back,", style: TextStyle(fontSize: 14, color: Colors.black54)),
-            Text("Ohi Yea Siam",
+            Text("Shanto Deb Nath",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ],
         ),
@@ -205,9 +205,9 @@ class HomePage extends StatelessWidget {
   }) {
     // Determine the color for the amount and icon background
     final isIncome = amount >= 0;
-    final amountColor = isIncome ? const Color(0xff43a047) : const Color(0xffe53935);
+    final amountColor = isIncome ? const Color.fromARGB(255, 12, 69, 15) : const Color(0xffe53935);
     final iconBgColor = isIncome ? Colors.yellow.shade100 : Colors.grey.shade200;
-    final iconColor = isIncome ? Colors.orange.shade800 : Colors.black87;
+    final iconColor = isIncome ? const Color.fromARGB(255, 126, 90, 61) : Colors.black87;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
