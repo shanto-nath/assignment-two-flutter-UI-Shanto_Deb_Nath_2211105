@@ -6,7 +6,7 @@ class Page4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff7f7f7), // Very light gray background
+      backgroundColor: const Color(0xfff7f7f7), 
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         child: Column(
@@ -32,7 +32,7 @@ class Page4 extends StatelessWidget {
 
             CircleAvatar(
               radius: 50,
-              backgroundColor: const Color(0xff7f00ff), // Vibrant purple
+              backgroundColor: const Color(0xff7f00ff), 
               child: const Text(
                 "SDN",
                 style: TextStyle(
@@ -65,10 +65,10 @@ class Page4 extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20), // More rounded corners
+        borderRadius: BorderRadius.circular(20), 
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2), // Lighter, subtle shadow
+            color: Colors.grey.withOpacity(0.2), 
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),
@@ -97,10 +97,10 @@ class Page4 extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20), // More rounded corners
+        borderRadius: BorderRadius.circular(20), 
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2), // Lighter, subtle shadow
+            color: Colors.grey.withOpacity(0.2), 
             blurRadius: 15,
             offset: const Offset(0, 8),
           ),

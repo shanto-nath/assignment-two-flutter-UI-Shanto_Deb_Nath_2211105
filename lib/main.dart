@@ -16,9 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // Setting a modern, readable font for the entire app
       theme: ThemeData(
-        fontFamily: 'Montserrat', // Using a popular modern font (assuming it's in pubspec.yaml)
+        fontFamily: 'Montserrat', 
       ),
       home: const MainNavigation(),
     );
@@ -56,9 +55,8 @@ class _MainNavigationState extends State<MainNavigation> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onTap,
-        // Modern Gen-Z theme color for selected item
-        selectedItemColor: const Color(0xff7f00ff), // Vibrant purple
-        unselectedItemColor: Colors.black45, // Darker grey for contrast
+        selectedItemColor: const Color.fromARGB(255, 46, 5, 86), 
+        unselectedItemColor: const Color.fromARGB(115, 23, 22, 22),
         type: BottomNavigationBarType.fixed,
 
         items: const [

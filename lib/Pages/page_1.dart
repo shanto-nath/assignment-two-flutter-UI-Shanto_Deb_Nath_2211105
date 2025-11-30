@@ -36,13 +36,13 @@ class HomePage extends StatelessWidget {
 
               const SizedBox(height: 15),
 
-              // UPDATED Transaction Items
+              
               _buildTransactionItem(
                 title: "Netflix Subscription",
                 category: "Entertainment",
                 date: "Today",
                 amount: -19.99,
-                iconData: Icons.movie_outlined, // New Icon
+                iconData: Icons.movie_outlined, 
               ),
 
               _buildTransactionItem(
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                 category: "Food & Drink",
                 date: "Today",
                 amount: -4.50,
-                iconData: Icons.coffee_outlined, // New Icon
+                iconData: Icons.coffee_outlined, 
               ),
 
               _buildTransactionItem(
@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                 date: "Yesterday",
                 amount: 3500.00,
                 iconData: Icons
-                    .account_balance_wallet_outlined, // New Icon (representing money)
+                    .account_balance_wallet_outlined, 
               ),
 
               _buildTransactionItem(
@@ -67,10 +67,9 @@ class HomePage extends StatelessWidget {
                 category: "Shopping",
                 date: "Yesterday",
                 amount: -55.80,
-                iconData: Icons.add_shopping_cart_rounded, // New Icon
+                iconData: Icons.add_shopping_cart_rounded, 
               ),
 
-              // Added an item to match the reference image count/style
               _buildTransactionItem(
                 title: "Amazon Purchase",
                 category: "Shopping",
@@ -90,7 +89,7 @@ class HomePage extends StatelessWidget {
       children: [
         const CircleAvatar(
           radius: 24,
-          backgroundColor: Color(0xff7f00ff), // Vibrant purple
+          backgroundColor: Color(0xff7f00ff), 
           child: Text(
             "SDN",
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -121,18 +120,17 @@ class HomePage extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(25),
       decoration: BoxDecoration(
-        // Modern Dark Gradient (Deep Space/Midnight Blue)
         gradient: const LinearGradient(
           colors: [Color(0xff0f0c29), Color(0xff302b63), Color(0xff24243e)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(25), // More rounded corners
+        borderRadius: BorderRadius.circular(25), 
         boxShadow: [
           BoxShadow(
             color: const Color(
               0xff302b63,
-            ).withOpacity(0.5), // Shadow matches dark theme
+            ).withOpacity(0.5), 
             blurRadius: 15,
             offset: const Offset(0, 10),
           ),
@@ -149,8 +147,8 @@ class HomePage extends StatelessWidget {
           Text(
             "\$8,945.32",
             style: TextStyle(
-              fontSize: 40, // Larger font
-              color: Color(0xff9e76ff), // Light, vibrant color for balance
+              fontSize: 40, 
+              color: Color(0xff9e76ff), 
               fontWeight: FontWeight.w900,
             ),
           ),
@@ -188,11 +186,10 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20), // More rounded corners
+        borderRadius: BorderRadius.circular(20), 
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2), // Subtle, modern shadow
-            blurRadius: 15,
+            color: Colors.grey.withOpacity(0.2), 
             spreadRadius: 0,
             offset: const Offset(0, 8),
           ),
@@ -205,7 +202,7 @@ class HomePage extends StatelessWidget {
             icon,
             size: 32,
             color: const Color(0xff7f00ff),
-          ), // Vibrant purple icon
+          ),
           const SizedBox(height: 8),
           Text(
             text,
@@ -221,9 +218,9 @@ class HomePage extends StatelessWidget {
     required String category,
     required String date,
     required double amount,
-    required IconData iconData, // Added iconData parameter
+    required IconData iconData, 
   }) {
-    // Determine the color for the amount and icon background
+
     final isIncome = amount >= 0;
     final amountColor = isIncome
         ? const Color.fromARGB(255, 12, 69, 15)
@@ -240,7 +237,7 @@ class HomePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.15), // Subtle, modern shadow
+            color: Colors.grey.withOpacity(0.15),
             blurRadius: 10,
             spreadRadius: 0,
             offset: const Offset(0, 5),
@@ -249,20 +246,19 @@ class HomePage extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Icon/Avatar Container (Matches the image style)
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: iconBgColor,
               borderRadius: BorderRadius.circular(
                 10,
-              ), // Slightly rounded square
+              ), 
             ),
             child: Icon(
               iconData,
               size: 24,
               color: isIncome ? const Color(0xffc0a440) : Colors.black54,
-            ), // Subtle icon color
+            ), 
           ),
 
           const SizedBox(width: 15),
@@ -283,15 +279,13 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.grey.shade600,
-                  ), // Smaller font size for category/date
+                  ), 
                 ),
               ],
             ),
           ),
 
-          // Amount Text Formatting (Matches the image)
           Text(
-            // Show +$ for income, but just $ for expense (without the - sign)
             isIncome
                 ? "+\$${amount.toStringAsFixed(2)}"
                 : "\$${amount.abs().toStringAsFixed(2)}",

@@ -6,7 +6,7 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xffe0f7fa), // Light blue pastel background
+      backgroundColor: Color(0xffe0f7fa), 
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(30.0),
@@ -16,7 +16,7 @@ class Page3 extends StatelessWidget {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Color(0xff004d40), // Dark teal for text
+              color: Color(0xff004d40), 
             ),
           ),
         ),

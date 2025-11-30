@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-
 class Page2 extends StatelessWidget {
   const Page2({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const Color primaryVibrant = Color(0xff7f00ff); // Vibrant Purple
+    const Color backgroundLight = Color(0xfff7f7f7); // Light Gray Background
+
     return Scaffold(
-      backgroundColor: const Color(0xfff7f7f7), // Light gray background
+      backgroundColor: backgroundLight,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+             
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -20,9 +23,9 @@ class Page2 extends StatelessWidget {
                     children: [
                       const CircleAvatar(
                         radius: 20,
-                        backgroundColor: Color(0xff7f00ff), // Vibrant purple
+                        backgroundColor: primaryVibrant,
                         child:
-                        Text("S", style: TextStyle(color: Colors.white)),
+                        Text("SDN", style: TextStyle(color: Colors.white)),
                       ),
                       const SizedBox(width: 10),
                       const Column(
@@ -46,13 +49,12 @@ class Page2 extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              const Text(
+              Text(
                 "Monthly Spending Report",
-                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Color(0xff7f00ff)), // Vibrant color for title
+                style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.black87),
               ),
 
               const SizedBox(height: 20),
-
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -75,8 +77,8 @@ class Page2 extends StatelessWidget {
                     Text(
                       "-\$1270.00",
                       style: TextStyle(
-                          color: Color(0xffe53935), // Updated red for high contrast
-                          fontSize: 34,
+                          color: Color(0xffe53935), 
+                          fontSize: 34, 
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 6),
@@ -102,10 +104,10 @@ class Page2 extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              _category("Food & Drink", 450, const Color(0xffef5350), "35%"), // Pastel/Vibrant red
-              _category("Shopping", 320, const Color(0xff42a5f5), "25%"), // Pastel/Vibrant blue
-              _category("Housing", 280, const Color(0xffffca28), "22%"), // Vibrant yellow
-              _category("Transport", 150, const Color(0xff66bb6a), "12%"), // Pastel/Vibrant green
+              _category("Food & Drink", 450, const Color(0xffef5350), "35%"), 
+              _category("Shopping", 320, const Color(0xff42a5f5), "25%"), 
+              _category("Housing", 280, const Color(0xffffca28), "22%"), 
+              _category("Transport", 150, const Color(0xff66bb6a), "12%"), 
               _category("Other", 70, Colors.grey, "6%"),
             ],
           ),
@@ -116,38 +118,35 @@ class Page2 extends StatelessWidget {
 
   Widget _category(
       String title, double amount, Color color, String percent) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 18),
-      padding: const EdgeInsets.all(16), // Slightly more padding
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-              color: Colors.grey.withOpacity(0.15), // Lighter, subtle shadow
-              blurRadius: 10,
-              offset: const Offset(0, 5))
-        ],
-      ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title,
-              style: const TextStyle(
-                  fontWeight: FontWeight.w600, fontSize: 18)), // Slightly larger font
-          const SizedBox(height: 12),
-
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w600, fontSize: 16),
+              ),
+     
+              Text(
+                "\$${amount.toStringAsFixed(2)} ($percent)",
+                style: const TextStyle(
+                    fontSize: 16, fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          
           LinearProgressIndicator(
             value: amount / 1300,
-            backgroundColor: const Color(0xffe0e0e0), // Lighter progress background
+            backgroundColor: const Color(0xffe0e0e0), 
             color: color,
-            minHeight: 8, // Thicker progress bar
+            minHeight: 6,
           ),
-          const SizedBox(height: 12),
-
-          Text("\$${amount.toStringAsFixed(2)} ($percent)",
-              style: const TextStyle(
-                  fontSize: 16, fontWeight: FontWeight.w700, color: Colors.black87)),
         ],
       ),
     );
