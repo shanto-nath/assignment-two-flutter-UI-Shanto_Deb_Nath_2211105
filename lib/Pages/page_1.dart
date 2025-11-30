@@ -27,7 +27,11 @@ class HomePage extends StatelessWidget {
 
               const Text(
                 "Recent Transactions",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black87),
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
               ),
 
               const SizedBox(height: 15),
@@ -54,7 +58,8 @@ class HomePage extends StatelessWidget {
                 category: "Income",
                 date: "Yesterday",
                 amount: 3500.00,
-                iconData: Icons.account_balance_wallet_outlined, // New Icon (representing money)
+                iconData: Icons
+                    .account_balance_wallet_outlined, // New Icon (representing money)
               ),
 
               _buildTransactionItem(
@@ -64,7 +69,7 @@ class HomePage extends StatelessWidget {
                 amount: -55.80,
                 iconData: Icons.add_shopping_cart_rounded, // New Icon
               ),
-              
+
               // Added an item to match the reference image count/style
               _buildTransactionItem(
                 title: "Amazon Purchase",
@@ -86,15 +91,23 @@ class HomePage extends StatelessWidget {
         const CircleAvatar(
           radius: 24,
           backgroundColor: Color(0xff7f00ff), // Vibrant purple
-          child: Text("SDN", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          child: Text(
+            "SDN",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
         ),
         const SizedBox(width: 12),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text("Welcome back,", style: TextStyle(fontSize: 14, color: Colors.black54)),
-            Text("Shanto Deb Nath",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(
+              "Welcome back,",
+              style: TextStyle(fontSize: 14, color: Colors.black54),
+            ),
+            Text(
+              "Shanto Deb Nath",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
         const Spacer(),
@@ -117,7 +130,9 @@ class HomePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(25), // More rounded corners
         boxShadow: [
           BoxShadow(
-            color: const Color(0xff302b63).withOpacity(0.5), // Shadow matches dark theme
+            color: const Color(
+              0xff302b63,
+            ).withOpacity(0.5), // Shadow matches dark theme
             blurRadius: 15,
             offset: const Offset(0, 10),
           ),
@@ -126,8 +141,10 @@ class HomePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
-          Text("Total Balance",
-              style: TextStyle(color: Colors.white70, fontSize: 16)),
+          Text(
+            "Total Balance",
+            style: TextStyle(color: Colors.white70, fontSize: 16),
+          ),
           SizedBox(height: 8),
           Text(
             "\$8,945.32",
@@ -142,10 +159,12 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Savings: \$5,500", style: TextStyle(color: Colors.white)),
-              Text("Last 30 days: +\$300",
-                  style: TextStyle(color: Colors.white)),
+              Text(
+                "Last 30 days: +\$300",
+                style: TextStyle(color: Colors.white),
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -182,14 +201,15 @@ class HomePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 32, color: const Color(0xff7f00ff)), // Vibrant purple icon
+          Icon(
+            icon,
+            size: 32,
+            color: const Color(0xff7f00ff),
+          ), // Vibrant purple icon
           const SizedBox(height: 8),
           Text(
             text,
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 14,
-            ),
+            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
           ),
         ],
       ),
@@ -205,9 +225,12 @@ class HomePage extends StatelessWidget {
   }) {
     // Determine the color for the amount and icon background
     final isIncome = amount >= 0;
-    final amountColor = isIncome ? const Color.fromARGB(255, 12, 69, 15) : const Color(0xffe53935);
-    final iconBgColor = isIncome ? Colors.yellow.shade100 : Colors.grey.shade200;
-    final iconColor = isIncome ? const Color.fromARGB(255, 126, 90, 61) : Colors.black87;
+    final amountColor = isIncome
+        ? const Color.fromARGB(255, 12, 69, 15)
+        : const Color(0xffe53935);
+    final iconBgColor = isIncome
+        ? Colors.yellow.shade100
+        : Colors.grey.shade200;
 
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
@@ -221,7 +244,7 @@ class HomePage extends StatelessWidget {
             blurRadius: 10,
             spreadRadius: 0,
             offset: const Offset(0, 5),
-          )
+          ),
         ],
       ),
       child: Row(
@@ -231,9 +254,15 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: iconBgColor,
-              borderRadius: BorderRadius.circular(10), // Slightly rounded square
+              borderRadius: BorderRadius.circular(
+                10,
+              ), // Slightly rounded square
             ),
-            child: Icon(iconData, size: 24, color: isIncome ? const Color(0xffc0a440) : Colors.black54), // Subtle icon color
+            child: Icon(
+              iconData,
+              size: 24,
+              color: isIncome ? const Color(0xffc0a440) : Colors.black54,
+            ), // Subtle icon color
           ),
 
           const SizedBox(width: 15),
@@ -242,13 +271,19 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title,
-                    style: const TextStyle(
-                        fontSize: 17, fontWeight: FontWeight.w600)),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
                 Text(
                   "$category • $date",
-                  style:
-                  TextStyle(fontSize: 13, color: Colors.grey.shade600), // Smaller font size for category/date
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.grey.shade600,
+                  ), // Smaller font size for category/date
                 ),
               ],
             ),
@@ -257,13 +292,15 @@ class HomePage extends StatelessWidget {
           // Amount Text Formatting (Matches the image)
           Text(
             // Show +$ for income, but just $ for expense (without the - sign)
-            isIncome ? "+\$${amount.toStringAsFixed(2)}" : "\$${amount.abs().toStringAsFixed(2)}",
+            isIncome
+                ? "+\$${amount.toStringAsFixed(2)}"
+                : "\$${amount.abs().toStringAsFixed(2)}",
             style: TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.bold,
               color: amountColor,
             ),
-          )
+          ),
         ],
       ),
     );
